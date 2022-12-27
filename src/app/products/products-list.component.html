@@ -1,6 +1,6 @@
 <div class='card'>
   <div class='card-header'>
-    Product List
+    {{pageTitle}}
   </div>
   <div class='card-body'>
     <div class='row'>
@@ -14,12 +14,14 @@
         <h4>Filtered by: </h4>
       </div>
     </div>
-    <div class='table-responsive'>
+    <div class='table-responsive' *ngIf="products.length">
+<!--    <div class='table-responsive' *ngFor='let product of products'>-->
       <table class='table'>
         <thead>
         <tr>
           <th>
             <button class='btn btn-primary'>
+              Show Image
             </button>
           </th>
           <th>Product</th>
@@ -27,6 +29,11 @@
           <th>Available</th>
           <th>Price</th>
           <th>5 Star Rating</th>
+<!--          <th>{{ product.productName }}</th>-->
+<!--          <th>{{ product.productCode }}</th>-->
+<!--          <th>{{ products.releaseDate }}</th>-->
+<!--          <th>{{ products.price }}</th>-->
+<!--          <th>{{ products.starRating }}</th>-->
         </tr>
         </thead>
         <tbody>
