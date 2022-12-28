@@ -29,14 +29,16 @@
           <th>Available</th>
           <th>Price</th>
           <th>5 Star Rating</th>
-<!--          <th>{{ product.productName }}</th>-->
-<!--          <th>{{ product.productCode }}</th>-->
-<!--          <th>{{ products.releaseDate }}</th>-->
-<!--          <th>{{ products.price }}</th>-->
-<!--          <th>{{ products.starRating }}</th>-->
         </tr>
         </thead>
         <tbody>
+          <tr  *ngFor='let product of products'>
+            <td>{{ product.productName }}</td>
+            <td>{{ product.productCode }}</td>
+            <td>{{ product.releaseDate }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.starRating }}</td>
+          </tr>
         </tbody>
       </table>
     </div>
