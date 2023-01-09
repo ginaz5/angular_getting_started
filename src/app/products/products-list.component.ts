@@ -3,7 +3,8 @@ import {IProduct} from "./product";
 
 @Component({
   selector: 'pm-products',
-  templateUrl: './products-list.component.html'
+  templateUrl: './products-list.component.html',
+  styleUrls: ['./products-list.component.css']
 })
 export class ProductsListComponent {
   pageTitle: string = 'Product List';
