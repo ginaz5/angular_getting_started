@@ -15,7 +15,7 @@
         <h4>Filtered by: {{ listFilter }}</h4>
       </div>
     </div>
-    <div class='table-responsive' *ngIf="products.length">
+    <div class='table-responsive' *ngIf="filteredProducts.length">
 <!--    <div class='table-responsive' *ngFor='let product of products'>-->
       <table class='table'>
         <thead>
@@ -46,7 +46,10 @@
             <td>{{ product.productCode | lowercase | convertToSpaces:'-' }}</td>
             <td>{{ product.releaseDate }}</td>
             <td>{{ product.price | currency: 'USD':'symbol':'1.2-2' }}</td>
-            <td>{{ product.starRating }}</td>
+            <td>
+              <pm-star [rating]='product.starRating'>
+              </pm-star>
+            </td>
           </tr>
         </tbody>
       </table>

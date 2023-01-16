@@ -34,16 +34,16 @@ export class ProductsListComponent implements OnInit {
       "starRating": 4.2,
       "imageUrl": "assets/images/garden_cart.png"
     },
-{
-  "productId": 5,
-  "productName": "Hammer",
-  "productCode": "TBX-0048",
-  "releaseDate": "May 21, 2021",
-  "description": "Curved claw steel hammer",
-  "price": 8.9,
-  "starRating": 4.8,
-  "imageUrl": "assets/images/hammer.png"
-}
+    {
+      "productId": 5,
+      "productName": "Hammer",
+      "productCode": "TBX-0048",
+      "releaseDate": "May 21, 2021",
+      "description": "Curved claw steel hammer",
+      "price": 8.9,
+      "starRating": 4.8,
+      "imageUrl": "assets/images/hammer.png"
+    }
     ];
 
   performFilter(filterBy: string): IProduct[] {
@@ -56,6 +56,6 @@ export class ProductsListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._listFilter = 'cart';
+    this.listFilter = 'cart';
   }
 }
