@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {IProduct} from "./product";
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {HttpClient, HttpErrorResponse} from "@angular/common/http";
+import {catchError, Observable, tap, throwError} from "rxjs";
 
 // manage product data
 // a service does not need to be defined in an Angular module
@@ -16,6 +16,20 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<IProduct[]> {
-    return this.http.get<IProduct[]>(this.productUrl);
+    return this.http.get<IProduct[]>(this.productUrl).pipe(
+      tap(data => console.log('All', JSON.stringify(data))),
+      catchError(this.handleError)
+    );
+  }
+
+  private handleError(err : HttpErrorResponse) {
+    let errorMessage = '';
+    if (err.error instanceof ErrorEvent) {
+      errorMessage = `An error occured: ${err.error.message}`;
+    } else {
+      errorMessage = `Server returned code: ${err.status}, error message is: ${err.message}`;
+    }
+    console.error(errorMessage);
+    return throwError(() => errorMessage);
   }
 }
