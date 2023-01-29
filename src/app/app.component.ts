@@ -7,5 +7,5 @@ import {map, of, take} from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular: Getting Started';
+  title = ' Angular: Product Management ';
 }
